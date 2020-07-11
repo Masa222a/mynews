@@ -1,0 +1,8 @@
+//Controllerの役割について、説明してください。
+MVCフレームワークの中でModelとViewを唯一繋ぐ存在であり、
+viewで操作された機能を取りに行ったり、ModelでDBから取得したデータ
+をViewに渡す橋渡しの役割をする。
+
+
+//ControllerとRoutingの役割について、説明してください。
+ユーザーからのアクセスをRoutingで受け取り、Controller(Action)に渡す
