@@ -1,0 +1,22 @@
+1 Viewは何をするところでしょうか。簡潔に説明してみてください。
+ユーザーのブラウザに表示するデータを生成するところ
+
+
+2 プログラマーがHTMLを書かずにPHPなどのプログラミング言語や
+フレームワークを使う必要があるのはどういった理由でしょうか。
+決まったものを表示するhtmlファイルしか出力できないから
+プログラミング言語やフレームワークを使う
+
+
+3 【応用】 前々章でAdmin/ProfileControllerのadd Action, edit Action に次のように記述しました。
+
+  public function add()
+  {
+      return view('admin.profile.create');
+  }
+  public function edit()
+  {
+      return view('admin.profile.edit');
+  }
+この場合、add Action と edit Action を描画するには、それぞれどこのディレクトリに何というbladeファイルを設置すれば良いでしょうか。
+adminの中のprofileの中にcreate.blade.phpとprofile.blade.phpを配置する
