@@ -14,3 +14,14 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+/* Route::get('admin/news/create', 'Admin\NewsController@add');
+   グループ化してhttp://XXXXXX.jp/admin/ から始まるURLの設定にしている*/
+Route::group(['prefix' => 'admin'], function() {
+   Route::get('news/create', 'Admin\NewsController@add');
+});
+
+Route::group(['prefix' => 'admin'], function() {
+    Route::get('profile/create', 'Admin\ProfileController@add');
+    Route::get('profile/edit', 'Admin\ProfileController@edit');
+});

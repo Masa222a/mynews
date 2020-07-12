@@ -1,0 +1,11 @@
+1.URLとControllerやActionを紐付ける機能を何といいますか？
+グループ化
+
+
+2.あなたが考える、group化をすることのメリットを考えてみてください。
+機能によってまとまっているのでわかりやすく、メンテナンスがしやすくなる。
+
+
+3.「http://XXXXXX.jp/XXX というアクセスが来たときに、 
+AAAControllerのbbbというAction に渡すRoutingの設定」を書いてみてください。
+Route::get('XXX','AAAController@bbb');
