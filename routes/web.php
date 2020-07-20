@@ -17,13 +17,16 @@ Route::get('/', function () {
 
 /* Route::get('admin/news/create', 'Admin\NewsController@add');
    グループ化してhttp://XXXXXX.jp/admin/ から始まるURLの設定にしている*/
-Route::group(['prefix' => 'admin'], function() {
-    Route::get('news/create', 'Admin\NewsController@add')->middleware('auth');
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function() {
+    Route::get('news/create', 'Admin\NewsController@add');
+    Route::post('news/create', 'Admin\NewsController@create');
 });
 
 Route::group(['prefix' => 'admin'], function() {
     Route::get('profile/create', 'Admin\ProfileController@add')->middleware('auth');
+    Route::post('profile/create', 'Admin\ProfileController@create')->middleware('auth');
     Route::get('profile/edit', 'Admin\ProfileController@edit')->middleware('auth');
+    Route::get('profile/edit', 'Admin\ProfileController@update')->middleware('auth');
 });
 
 Auth::routes();

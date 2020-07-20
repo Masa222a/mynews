@@ -48,9 +48,9 @@
                         <ul class="navbar-nav ml-auto">
                             {{-- ログインしていなかったらログイン画面へのリンクを表示 --}}
                             @guest
-                                <li><a class="nav-link" href="{{ route::('login') }}">{{ __('Login') }}</a></li>
+                                <li><a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a></li>
                             
-                            {{-- ログイン済みならユーザー名とログアウトボタンを表示 --}}
+                            {{-- ログイン済みならユ���ザー名とログアウトボタンを表示 --}}
                             @else
                                 <li class="nav-item dropdown">
                                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"
@@ -62,6 +62,7 @@
                                         @csrf
                                     </form>
                                 </li>
+                            @endguest
                         </ul>
                     </div>
                 </div>
