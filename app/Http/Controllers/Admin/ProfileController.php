@@ -4,7 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Profile;  //Profileモデルを扱えるようにする
+//Profileモデルを扱えるようにする
+use App\Profile;  
+// ProfileHistoryモデルを扱えるようにする
+use App\ProfileHistory;
+use Carbon\Carbon;
 
 class ProfileController extends Controller
 {
@@ -57,7 +61,7 @@ class ProfileController extends Controller
         return view('admin.profile.edit', ['profile_form' => $profile]);
     }
     
-    public function update()
+    public function update(Request $request)
     {            
         //Validationをかける
         $this->validate($request, Profile::$rules);
@@ -70,9 +74,14 @@ class ProfileController extends Controller
         unset($profile_form['_token']);
         
         //該当するデータを上書きして保存する
-        $profiles->fill($profil_form)->save();
+        $profile->fill($profile_form)->save();
         
-        return redirect('admin/profile/edit');
+        $profilehistory = new ProfileHistory;
+        $profilehistory->profile_id = $profile->id;
+        $profilehistory->change_log_at = Carbon::now();
+        $profilehistory->save();
+        
+        return redirect('admin/profile/');
     }
     
     public function delete(Request $request)
