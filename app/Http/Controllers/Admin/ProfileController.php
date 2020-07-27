@@ -60,7 +60,7 @@ class ProfileController extends Controller
         }
         return view('admin.profile.edit', ['profile_form' => $profile]);
     }
-    
+
     public function update(Request $request)
     {            
         //Validationをかける
