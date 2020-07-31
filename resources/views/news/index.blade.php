@@ -10,9 +10,9 @@
                         <div class="col-md-6">
                             <div class="caption mx-auto">
                                 <div class="image">
-                                    @if ($headline->image_path)
-                                        <img src="{{ $headline->image_path }}">
-                                    @endif
+                                     @if ($headline->image_path)
+                                          <img src="{{ $headline->image_path }}">
+                                     @endif
                                 </div>
                                 <div class="title p-2">
                                     <h1>{{ str_limit($headline->title, 70) }}</h1>
