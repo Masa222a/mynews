@@ -28,7 +28,7 @@
             </div>
         @endif
         <hr color="#c0c0c0">
-        <h1>変更</h1>
+        <h1>index</h1>
         <div class="row">
             <div class="posts col-md-8 mx-auto mt-3">
                 @foreach($posts as $post)
